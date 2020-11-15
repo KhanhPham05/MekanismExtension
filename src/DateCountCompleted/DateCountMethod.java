@@ -1,4 +1,4 @@
-package DateCount;
+package DateCountCompleted;
 
 import java.util.Scanner;
 
@@ -47,9 +47,10 @@ public class DateCountMethod implements IDateCount {
 		this.year = year;
 
 	}
-	Scanner sc = new Scanner(System.in);
+
 	public void checkYearDayMonth(){
 		//check for invalid month > 12
+		Scanner sc = new Scanner(System.in);
 		while (this.month > 12){ System.out.print("Thang ban nhap khong hop le. Moi bann nhap lai\n \t Thang: ");
 								int newMonth = sc.nextInt();
 								this.month = newMonth;
