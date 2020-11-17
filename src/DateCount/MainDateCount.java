@@ -1,4 +1,4 @@
-package DateCountCompleted;
+package DateCount;
 
 import java.util.Scanner;
 
