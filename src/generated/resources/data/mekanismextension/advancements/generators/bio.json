@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:generators/wind",
+  "display": {
+    "icon": {
+      "item": "mekanismgenerators:bio_generator"
+    },
+    "title": {
+      "translate": "advancement.plus.unfriendly_generator.title"
+    },
+    "description": {
+      "translate": "advancement.plus.unfriendly_generator.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_bio_gen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismgenerators:bio_generator"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bio_gen"
+    ]
+  ]
+}

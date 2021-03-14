@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:machines/crusher",
+  "display": {
+    "icon": {
+      "item": "mekanism:energized_smelter"
+    },
+    "title": {
+      "translate": "advancement.plus.hot_electric.title"
+    },
+    "description": {
+      "translate": "advancement.plus.hot_electric.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_smelter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:energized_smelter"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_smelter"
+    ]
+  ]
+}
