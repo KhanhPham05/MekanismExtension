@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:machines/metallurgic_infuser",
+  "display": {
+    "icon": {
+      "item": "mekanism:alloy_infused"
+    },
+    "title": {
+      "translate": "advancement.plus.infused_alloy.title"
+    },
+    "description": {
+      "translate": "advancement.plus.infused_alloy.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_alloy_tier1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:alloy_infused"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_alloy_tier1"
+    ]
+  ]
+}

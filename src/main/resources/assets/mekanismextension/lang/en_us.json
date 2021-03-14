@@ -1,0 +1,49 @@
+{
+  "advancement.plus.root.title": "Mekanism Extension",
+  "advancement.plus.root.desc": "Welcome !",
+  "advancement.plus.heart_of_mekanism.title": "Heart Of Mekanism",
+  "advancement.plus.heart_of_mekanism.desc": "Human need a heart to live, Mekanism need Osmium Ingot to play",
+  "advancement.plus.first_generator.title": "First Generator",
+  "advancement.plus.first_generator.desc": "Generators for your life!! Heat Generator is the first one",
+  "advancement.plus.infusing_metal.title": "Infusing Metal",
+  "advancement.plus.infusing_metal.desc": "Craft Metallurgic Infuser.",
+  "advancement.plus.infused_alloy.title": "Infused Alloy",
+  "advancement.plus.infused_alloy.desc": "Craft Infused Alloy in Metallurgic Infuser",
+  "advancement.plus.reinforced_alloy.title": "Infused Alloy ... But Better",
+  "advancement.plus.reinforced_alloy.desc": "Craft Reinforced Alloy in Metallurgic Infuser",
+  "advancement.plus.chamber_of_richness.title": "Chamber Of Richness",
+  "advancement.plus.chamber_of_richness.desc": "Craft Enrichment Chamber for basic ore multiplying processor and making Metallurgic Infuser fuels",
+
+  "advancement.plus.basic_cc.title": "Basic Control Circuit",
+  "advancement.plus.basic_cc.desc": "Craft Basic Control Circuit in Metallurgic Infuser",
+  "advancement.plus.advanced_cc.title": "Advanced Control Circuit",
+  "advancement.plus.advanced_cc.desc": "Craft Advanced Control Circuit",
+  "advancement.plus.elite_cc.title": "Elite Control Circuit",
+  "advancement.plus.elite_cc.desc": "Elite Control Circuit",
+  "advancement.plus.ultimate_cc.title": "Ultimate Control Circuit",
+  "advancement.plus.ultimate_cc.desc": "Craft Ultimate Control Circuit",
+
+  "advancement.plus.enriched_carbon.title": "Enriched Carbon",
+  "advancement.plus.enriched_carbon.desc": "Craft Enriched Carbon in Enrichment Chamber",
+  "advancement.plus.enriched_diamond.title": "Enriched Diamond",
+  "advancement.plus.enriched_redstone.title": "Enriched Redstone",
+  "advancement.plus.enriched_diamond.desc": "Craft Enriched Diamond in Enrichment Chamber",
+  "advancement.plus.enriched_redstone.desc": "Craft Enriched Redstone in Enrichment Chamber",
+
+  "advancement.plus.crushing_matter.title": "Crushing Matter",
+  "advancement.plus.crushing_matter.desc": "Craft Crusher",
+
+  "advancement.plus.processing.enriching.dust_iron.title": "Iron Dust",
+  "advancement.plus.processing.enriching.dust_gold.title": "Gold Dust",
+  "advancement.plus.processing.enriching.crushing_metal.desc": "Double the ore in Enrichment Chamber or crush from ingot in Crusher",
+
+  "advancement.plus.steel_dust.title": "Steel Dust",
+  "advancement.plus.steel_dust.desc": "Make Steel Dust in Metallurgic Infuser from Enriched Iron. See JEI for more information",
+  "advancement.plus.steel_ingot.title": "Sharp Metal !!",
+  "advancement.plus.steel_ingot.desc": "Make Steel Ingot",
+  "advancement.plus.steel_casing.title": "Soul Of Mekanism",
+  "advancement.plus.steel_casing.desc": "Human have soul, Mekanism have Steel Casing!",
+
+  "advancement.plus.copping.title": "Copping",
+  "advancement.plus.copping.desc": "Obtain Copper"
+}

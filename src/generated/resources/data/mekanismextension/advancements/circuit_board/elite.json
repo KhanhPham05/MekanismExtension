@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:circuit_board/advanced",
+  "display": {
+    "icon": {
+      "item": "mekanism:elite_control_circuit"
+    },
+    "title": {
+      "translate": "advancement.plus.elite_cc.title"
+    },
+    "description": {
+      "translate": "advancement.plus.elite_cc.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_elite_cc": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:elite_control_circuit"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_elite_cc"
+    ]
+  ]
+}

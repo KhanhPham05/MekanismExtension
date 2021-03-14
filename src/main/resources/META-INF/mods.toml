@@ -1,0 +1,47 @@
+modLoader="javafml" #mandatory
+loaderVersion="[36,)"
+license="All rights reserved"
+
+[[mods]] #mandatory
+modId="mekanismextension" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Advancement Plus - Mekanism Addon" #mandatory
+#logoFile="examplemod.png"  #optional
+#credits="Thanks for this example mod goes to Java"  #optional
+#authors="Love, Cheese and small house plants"   #optional
+description='''
+Advancement Plus !!! But Mekanism'''
+[[dependencies.mekanismextension]] #optional
+# the modid of the dependency
+modId="forge" #mandatory
+# Does this dependency have to exist - if not, ordering below must be specified
+mandatory=true #mandatory
+# The version range of the dependency
+versionRange="[36,)" #mandatory
+# An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+ordering="NONE"
+# Side this dependency is applied on - BOTH, CLIENT or SERVER
+side="BOTH"
+# Here's another dependency
+[[dependencies.mekanismextension]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.16,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mekanismextension]]
+modId="mekanism"
+mandatory=true
+versionRange="[10.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mekanismextension]]
+modId="jei"
+mandatory=true
+versionRange="[7.6.1.71,)"
+ordering="NONE"
+side="BOTH"
+
+

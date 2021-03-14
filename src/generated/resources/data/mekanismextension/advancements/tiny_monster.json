@@ -1,0 +1,108 @@
+{
+  "parent": "mekanismextension:root",
+  "display": {
+    "icon": {
+      "item": "minecraft:golden_sword",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.plus.tiny_monster.title"
+    },
+    "description": {
+      "translate": "advancement.plus.tiny_monster.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "mekanismadditions:baby_creeper": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "mekanismadditions:baby_creeper"
+            },
+            "entity": "this"
+          }
+        ]
+      }
+    },
+    "mekanismadditions:baby_enderman": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "mekanismadditions:baby_enderman"
+            },
+            "entity": "this"
+          }
+        ]
+      }
+    },
+    "mekanismadditions:baby_skeleton": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "mekanismadditions:baby_skeleton"
+            },
+            "entity": "this"
+          }
+        ]
+      }
+    },
+    "mekanismadditions:baby_wither_skeleton": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "mekanismadditions:baby_wither_skeleton"
+            },
+            "entity": "this"
+          }
+        ]
+      }
+    },
+    "mekanismadditions:baby_stray": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "mekanismadditions:baby_stray"
+            },
+            "entity": "this"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mekanismadditions:baby_creeper"
+    ],
+    [
+      "mekanismadditions:baby_enderman"
+    ],
+    [
+      "mekanismadditions:baby_skeleton"
+    ],
+    [
+      "mekanismadditions:baby_wither_skeleton"
+    ],
+    [
+      "mekanismadditions:baby_stray"
+    ]
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:generators/first_generator",
+  "display": {
+    "icon": {
+      "item": "mekanismgenerators:solar_generator"
+    },
+    "title": {
+      "translate": "advancement.plus.kinda_better_generator.title"
+    },
+    "description": {
+      "translate": "advancement.plus.kinda_better_generator.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_solar_gen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismgenerators:solar_generator"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_solar_gen"
+    ]
+  ]
+}

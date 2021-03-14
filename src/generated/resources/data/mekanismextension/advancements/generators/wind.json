@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:generators/solar_advanced",
+  "display": {
+    "icon": {
+      "item": "mekanismgenerators:wind_generator"
+    },
+    "title": {
+      "translate": "advancement.plus.windy_gen.title"
+    },
+    "description": {
+      "translate": "advancement.plus.windy_gen.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_wind_gen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismgenerators:wind_generator"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wind_gen"
+    ]
+  ]
+}
