@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:copping",
+  "display": {
+    "icon": {
+      "item": "mekanismgenerators:heat_generator"
+    },
+    "title": {
+      "translate": "advancement.plus.first_generator.title"
+    },
+    "description": {
+      "translate": "advancement.plus.first_generator.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_heat_gen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismgenerators:heat_generator"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_heat_gen"
+    ]
+  ]
+}

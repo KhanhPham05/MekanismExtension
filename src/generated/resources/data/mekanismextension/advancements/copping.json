@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:heart_of_mekanism",
+  "display": {
+    "icon": {
+      "item": "mekanism:ingot_copper"
+    },
+    "title": {
+      "translate": "advancement.plus.copping.title"
+    },
+    "description": {
+      "translate": "advancement.plus.copping.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_copper_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:ingot_copper"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_copper_ingot"
+    ]
+  ]
+}

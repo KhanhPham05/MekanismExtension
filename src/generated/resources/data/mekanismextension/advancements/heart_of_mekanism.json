@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:root",
+  "display": {
+    "icon": {
+      "item": "mekanism:ingot_osmium"
+    },
+    "title": {
+      "translate": "advancement.plus.heart_of_mekanism.title"
+    },
+    "description": {
+      "translate": "advancement.plus.heart_of_mekanism.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_osmium_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:ingot_osmium"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_osmium_ingot"
+    ]
+  ]
+}

@@ -1,0 +1,3 @@
+include 'src:advancementbundle'
+findProject(':src:advancementbundle')?.name = 'advancementbundle'
+
