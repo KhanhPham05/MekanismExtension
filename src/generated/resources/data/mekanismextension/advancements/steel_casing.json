@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:sharp_metal",
+  "display": {
+    "icon": {
+      "item": "mekanism:steel_casing"
+    },
+    "title": {
+      "translate": "advancement.plus.soul_of_mekanism.title"
+    },
+    "description": {
+      "translate": "advancement.plus.soul_of_mekanism.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_steel_casing": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:steel_casing"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_steel_casing"
+    ]
+  ]
+}

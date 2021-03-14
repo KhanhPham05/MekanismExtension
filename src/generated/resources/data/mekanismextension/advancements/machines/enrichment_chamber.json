@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:machines/metallurgic_infuser",
+  "display": {
+    "icon": {
+      "item": "mekanism:enrichment_chamber"
+    },
+    "title": {
+      "translate": "advancement.plus.chamber_of_richness.title"
+    },
+    "description": {
+      "translate": "advancement.plus.chamber_of_richness.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_enrichment_chamber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:enrichment_chamber"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_enrichment_chamber"
+    ]
+  ]
+}

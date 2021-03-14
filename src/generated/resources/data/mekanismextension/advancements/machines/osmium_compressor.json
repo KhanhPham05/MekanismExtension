@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:machines/smelter",
+  "display": {
+    "icon": {
+      "item": "mekanism:osmium_compressor"
+    },
+    "title": {
+      "translate": "advancement.plus.packed_osmium.title"
+    },
+    "description": {
+      "translate": "advancement.plus.packed_osmium.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_osmium_compressor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:osmium_compressor"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_osmium_compressor"
+    ]
+  ]
+}

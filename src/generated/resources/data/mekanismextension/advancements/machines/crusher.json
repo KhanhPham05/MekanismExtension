@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:machines/enrichment_chamber",
+  "display": {
+    "icon": {
+      "item": "mekanism:crusher"
+    },
+    "title": {
+      "translate": "advancement.plus.crushing_matter.title"
+    },
+    "description": {
+      "translate": "advancement.plus.crushing_matter.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_crusher": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:crusher"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crusher"
+    ]
+  ]
+}
