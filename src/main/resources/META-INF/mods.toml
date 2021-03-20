@@ -38,6 +38,27 @@ ordering="NONE"
 side="BOTH"
 
 [[dependencies.mekanismextension]]
+modId="mekanismgenerators"
+mandatory=true
+versionRange="[10.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mekanismextension]]
+modId="mekanismadditions"
+mandatory=true
+versionRange="[10.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mekanismextension]]
+modId="mekanismtools"
+mandatory=true
+versionRange="[10.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mekanismextension]]
 modId="jei"
 mandatory=true
 versionRange="[7.6.1.71,)"

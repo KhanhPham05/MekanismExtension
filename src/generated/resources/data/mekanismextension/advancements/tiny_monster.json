@@ -90,18 +90,10 @@
   },
   "requirements": [
     [
-      "mekanismadditions:baby_creeper"
-    ],
-    [
-      "mekanismadditions:baby_enderman"
-    ],
-    [
-      "mekanismadditions:baby_skeleton"
-    ],
-    [
-      "mekanismadditions:baby_wither_skeleton"
-    ],
-    [
+      "mekanismadditions:baby_creeper",
+      "mekanismadditions:baby_enderman",
+      "mekanismadditions:baby_skeleton",
+      "mekanismadditions:baby_wither_skeleton",
       "mekanismadditions:baby_stray"
     ]
   ]

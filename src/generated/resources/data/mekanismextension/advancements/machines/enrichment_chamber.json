@@ -1,5 +1,5 @@
 {
-  "parent": "mekanismextension:machines/metallurgic_infuser",
+  "parent": "mekanismextension:steel_casing",
   "display": {
     "icon": {
       "item": "mekanism:enrichment_chamber"

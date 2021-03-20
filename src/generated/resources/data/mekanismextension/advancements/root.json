@@ -10,8 +10,8 @@
       "translate": "advancement.plus.root.desc"
     },
     "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
+    "show_toast": false,
+    "announce_to_chat": false,
     "hidden": false,
     "background": "mekanism:textures/block/block_steel.png"
   },

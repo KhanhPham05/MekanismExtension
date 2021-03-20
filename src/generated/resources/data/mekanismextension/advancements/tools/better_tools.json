@@ -1,0 +1,68 @@
+{
+  "display": {
+    "icon": {
+      "item": "mekanismtools:osmium_axe",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.plus.quite_better_tool.title"
+    },
+    "description": {
+      "translate": "advancement.plus.quite_better_tool.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "refined_obsidian_axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismtools:refined_obsidian_axe"
+          }
+        ]
+      }
+    },
+    "refined_obsidian_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismtools:refined_obsidian_pickaxe"
+          }
+        ]
+      }
+    },
+    "refined_obsidian_shovel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismtools:refined_obsidian_shovel"
+          }
+        ]
+      }
+    },
+    "refined_obsidian_sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismtools:refined_obsidian_sword"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "refined_obsidian_axe",
+      "refined_obsidian_pickaxe",
+      "refined_obsidian_shovel",
+      "refined_obsidian_sword"
+    ]
+  ]
+}

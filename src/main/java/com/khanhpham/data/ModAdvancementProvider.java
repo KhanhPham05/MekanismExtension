@@ -12,6 +12,7 @@ import mekanism.common.registries.MekanismItems;
 import mekanism.common.resource.PrimaryResource;
 import mekanism.common.resource.ResourceType;
 import mekanism.generators.common.registries.GeneratorsBlocks;
+import mekanism.tools.common.registries.ToolsItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.ICriterionInstance;
@@ -33,14 +34,17 @@ import net.minecraft.world.biome.Biomes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.function.Consumer;
 
 import static mekanism.generators.common.registries.GeneratorsBlocks.HEAT_GENERATOR;
+import static mekanism.tools.common.registries.ToolsItems.*;
 
 
 public class ModAdvancementProvider extends AdvancementProvider {
@@ -105,39 +109,59 @@ public class ModAdvancementProvider extends AdvancementProvider {
         final FrameType goal = FrameType.GOAL;
         final FrameType challenge = FrameType.CHALLENGE;
 
-
         @Override
         public void accept(Consumer<Advancement> consumer) {
-            Advancement root = makeRootTrigger(allTheBiomes).withDisplay(IconRegistry.ICON.get(), getTitle("root"), getDesc(), new ResourceLocation("mekanism:textures/block/block_steel.png"), FrameType.CHALLENGE, true, true, false)
+            Advancement root = makeRootTrigger(allTheBiomes).withDisplay(IconRegistry.ICON.get(), getTitle("root"), getDesc(), new ResourceLocation("mekanism:textures/block/block_steel.png"), FrameType.CHALLENGE, false, false, false)
                     .withRequirementsStrategy(IRequirementsStrategy.OR)
                     .register(consumer, getId("root"));
 
-            Advancement heartOfMekanism = advancement(consumer, root, getMekanismResources(ResourceType.INGOT, PrimaryResource.OSMIUM), "heart_of_mekanism", task, "has_osmium_ingot", null, getId("heart_of_mekanism"));
+            Advancement heartOfMekanism = advancement(consumer, root, getMekanismResources(ResourceType.INGOT, PrimaryResource.OSMIUM), "heart_of_mekanism", "Heart Of Mekanism", CraftMode.CRAFT, task, "has_osmium_ingot", null, getId("heart_of_mekanism"));
 
-            Advancement copping = advancement(consumer, heartOfMekanism, getMekanismResources(ResourceType.INGOT, PrimaryResource.COPPER), "copping", task, "has_copper_ingot", null, "copping");
+            Advancement copping = advancement(consumer, heartOfMekanism, getMekanismResources(ResourceType.INGOT, PrimaryResource.COPPER), "copping", "Copping", CraftMode.CRAFT, task, "has_copper_ingot", null, "copping");
 
             //GENERATORS
-            Advancement firstGenerator = advancement(consumer, copping, HEAT_GENERATOR.getItem(), "first_generator", task, "has_heat_gen", null, generatorId("first_generator"));
+            Advancement firstGenerator = advancement(consumer, copping, HEAT_GENERATOR.getItem(), "first_generator", "First Generator", CraftMode.CRAFT, task, "has_heat_gen", null, generatorId("first_generator"));
 
-            Advancement kindaBetterGen = advancement(consumer, firstGenerator, GeneratorsBlocks.SOLAR_GENERATOR.getItem(), "kinda_better_generator", task, "has_solar_gen", null, generatorId("solar"));
+            Advancement kindaBetterGen = advancement(consumer, firstGenerator, GeneratorsBlocks.SOLAR_GENERATOR.getItem(), "kinda_better_generator","Kinda Better Generator", CraftMode.CRAFT, task, "has_solar_gen", null, generatorId("solar"));
 
-            Advancement betterSolarGen = advancement(consumer, kindaBetterGen, GeneratorsBlocks.ADVANCED_SOLAR_GENERATOR.getItem(), "better_solar_gen", task, "has_advanced_solar_gen", null, generatorId("solar_advanced"));
+            Advancement betterSolarGen = advancement(consumer, kindaBetterGen, GeneratorsBlocks.ADVANCED_SOLAR_GENERATOR.getItem(), "better_solar_gen", "Better Solar Generator", CraftMode.CRAFT, task, "has_advanced_solar_gen", null, generatorId("solar_advanced"));
 
-            Advancement windyGen = advancement(consumer, betterSolarGen, GeneratorsBlocks.WIND_GENERATOR.getItem(), "windy_gen", task, "has_wind_gen", null, generatorId("wind"));
+            Advancement windyGen = advancement(consumer, betterSolarGen, GeneratorsBlocks.WIND_GENERATOR.getItem(), "windy_gen", "Win-D Gen", CraftMode.CRAFT, task, "has_wind_gen", null, generatorId("wind"));
 
-            //MACHINES
+            Advancement unfriendlyGen = advancement(consumer, windyGen, GeneratorsBlocks.BIO_GENERATOR.getItem(), "unfriendly_generator","Unfriendly Generator", CraftMode.CRAFT, task, "has_bio_gen", null, generatorId("bio"));
+
+
+            //MACHINES & IMPORTANT COMPONENT
 
             Advancement infusingMetal = advancement(consumer, heartOfMekanism, MekanismBlocks.METALLURGIC_INFUSER.getItem(), "infusing_metal", goal, "has_infuser", null, machineId("metallurgic_infuser"));
 
-            Advancement chamberOfRichness = advancement(consumer, infusingMetal, MekanismBlocks.ENRICHMENT_CHAMBER.getItem(), "chamber_of_richness", goal, "has_enrichment_chamber", null, machineId("enrichment_chamber"));
+            Advancement sharpMetal = advancement(consumer, infusingMetal, MekanismItems.STEEL_INGOT.get(), "sharp_metal", task, "has_steel_ingot", null, getId("sharp_metal"));
+
+            Advancement soulOfMekanism = advancement(consumer, sharpMetal, MekanismBlocks.STEEL_CASING.getItem(), "soul_of_mekanism", task, "has_steel_casing", null, getId("steel_casing"));
+
+            Advancement chamberOfRichness = advancement(consumer, soulOfMekanism, MekanismBlocks.ENRICHMENT_CHAMBER.getItem(), "chamber_of_richness", goal, "has_enrichment_chamber", null, machineId("enrichment_chamber"));
 
             Advancement crushingMatter = advancement(consumer, chamberOfRichness, MekanismBlocks.CRUSHER.getItem(), "crushing_matter", goal, "has_crusher", null, machineId("crusher"));
+
+            Advancement hotElectric = advancement(consumer, crushingMatter, MekanismBlocks.ENERGIZED_SMELTER.getItem(), "hot_electric", goal, "has_smelter", null, machineId("smelter"));
+
+            Advancement packedOsmium = advancement(consumer, hotElectric, MekanismBlocks.OSMIUM_COMPRESSOR.getItem(), "packed_osmium", goal, "has_osmium_compressor", null, machineId("osmium_compressor"));
+
+            Advancement chemicalSeparator = advancement(consumer, packedOsmium, MekanismBlocks.ELECTROLYTIC_SEPARATOR.getItem(),
+                    "chemical_separator",
+                    "Chemical Separator",
+                    CraftMode.CRAFT,
+                    goal, "has_separator", null, machineId("separator"));
+
+            Advancement miningFever = advancement(consumer, chemicalSeparator, MekanismBlocks.DIGITAL_MINER.getItem(),"mining_fever", "Mining Fever", CraftMode.CRAFT, challenge, "has_miner", null, machineId("miner"));
+
 
             //ALLOYS
             Advancement infused = advancement(consumer, infusingMetal, MekanismItems.INFUSED_ALLOY.get(), "infused_alloy", task, "has_alloy_tier1", setRequireItem(MekanismItems.INFUSED_ALLOY.get()), alloyId("tier1"));
 
             Advancement reinforced = advancement(consumer, infused, MekanismItems.REINFORCED_ALLOY.get(), "reinforced_alloy", task, "has_reinforced_alloy", null, alloyId("reinforced"));
 
+            Advancement atomic = advancement(consumer, reinforced, MekanismItems.ATOMIC_ALLOY.get(), "atomic_alloy", task, "has_atomic_alloy", null, alloyId("atomic"));
 
             //CONTROL CIRCUITS
             Advancement basicCC = advancement(consumer, infusingMetal, MekanismItems.BASIC_CONTROL_CIRCUIT.get(), "basic_cc", task, "has_basic_cc", null, ccId("basic"));
@@ -149,12 +173,27 @@ public class ModAdvancementProvider extends AdvancementProvider {
             Advancement ultimate = advancement(consumer, eliteCC, MekanismItems.ULTIMATE_CONTROL_CIRCUIT.get(), "ultimate_cc", goal, "has_ultimate_cc", null, ccId("ultimate"));
 
 
+            //OTHER
+            Advancement hardenIngot = advancement(consumer, packedOsmium, MekanismItems.REFINED_OBSIDIAN_INGOT.get(), "harden_ingot", task, "has_refined_obsidian", null, getId("harden_ingot"));
+
             //ADDITION MOBS
             Advancement tinyMonster = test()
                     .withParent(root)
                     .withDisplay(Items.GOLDEN_SWORD, getTitle("tiny_monster"), getDesc(), null, task, true, true, false)
+                    .withRequirementsStrategy(IRequirementsStrategy.OR)
                     .register(consumer, getId("tiny_monster"));
 
+            //TOOLS
+            Advancement tools = makeToolAdvancement(MekanismToolType.AXE, MekanismToolType.PICKAXE, MekanismToolType.SHOVEL, MekanismToolType.SWORD)
+                    .withDisplay(ToolsItems.OSMIUM_AXE, getTitle("quite_better_tool"), getDesc(), null, task, true, true, false)
+                    .withRequirementsStrategy(IRequirementsStrategy.OR)
+                    .register(consumer, toolsId("better_tools"));
+
+            Advancement armors = makeToolAdvancement(MekanismToolType.HELMET, MekanismToolType.CHESTPLATE, MekanismToolType.LEGGINGS, MekanismToolType.BOOTS)
+                    .withParent(tools)
+                    .withDisplay(REFINED_OBSIDIAN_CHESTPLATE, getTitle("quite_better_armor"), getDesc(), null, task, true, true, false)
+                    .withRequirementsStrategy(IRequirementsStrategy.OR)
+                    .register(consumer, toolsId("better_armor"));
         }
 
         @SuppressWarnings("deprecation")
@@ -168,13 +207,21 @@ public class ModAdvancementProvider extends AdvancementProvider {
             return builder;
         }
 
+        private Advancement.Builder makeToolAdvancement(MekanismToolType... toolType) {
+            Advancement.Builder builder = getBuilder();
+            for (MekanismToolType type : toolType) {
+                for (IItemProvider tool : type.getTool())
+                    builder.withCriterion(Objects.requireNonNull(tool.asItem().getRegistryName()).getPath(), setRequireItem(tool));
+            }
+            return builder;
+        }
+
         /**
          * @param criterion - instance of Custom/Vanilla Criterion Trigger
          *                  If you want advancement require item as same with icon, just leave it null
          */
-        private Advancement advancement(Consumer<Advancement> consumer, Advancement parent, @Nullable IItemProvider icon, String key, FrameType frame, String criterionId, ICriterionInstance criterion, String id) {
-
-
+        @Deprecated
+        private Advancement advancement(Consumer<Advancement> consumer, Advancement parent, IItemProvider icon, String key, FrameType frame, String criterionId, @Nullable ICriterionInstance criterion, String id) {
             return criterion == null
                     ? getBuilder()
                     .withParent(parent)
@@ -187,6 +234,16 @@ public class ModAdvancementProvider extends AdvancementProvider {
                     .withDisplay(icon, getTitle(key), getDesc(), null, frame, true, true, false)
                     .withCriterion(criterionId, criterion)
                     .register(consumer, id);
+        }
+
+        private Advancement advancement(Consumer<Advancement> consumer, Advancement parent, IItemProvider icon, String key, String title, @Nonnull CraftMode mode , FrameType frame, String criterionId, @Nullable ICriterionInstance criterion, String id) {
+            if (mode == CraftMode.CRAFT)
+                ENLangProvider.putTrans(key, title, "Craft " + title );
+
+            if (mode == CraftMode.METALLURGIC_INFUSING)
+                ENLangProvider.putTrans(key, title, "Craft " + title + " in Metallurgic Infuser");
+
+            return advancement(consumer, parent, icon, key, frame, criterionId, criterion, id);
         }
 
 
@@ -247,6 +304,16 @@ public class ModAdvancementProvider extends AdvancementProvider {
         private String ccId(String key) {
             checkId(key);
             return MekanismExtension.MOD_ID + ":circuit_board/" + key;
+        }
+
+        private String toolsId(String key) {
+            checkId(key);
+            return MekanismExtension.MOD_ID + ":tools/" + key;
+        }
+
+        private String factoryId(String key) {
+            checkId(key);
+            return MekanismExtension.MOD_ID + ":factory/" + key;
         }
 
         private void checkId(String key) {
@@ -342,5 +409,37 @@ public class ModAdvancementProvider extends AdvancementProvider {
                 //VOID ??
                 Biomes.THE_VOID
         );
+    }
+
+    private enum MekanismToolType {
+        //TOOL
+        PAXEL(BRONZE_PAXEL, STEEL_PAXEL, LAPIS_LAZULI_PAXEL, OSMIUM_PAXEL, REFINED_GLOWSTONE_PAXEL, REFINED_OBSIDIAN_PAXEL),
+        AXE(BRONZE_AXE, STEEL_AXE, LAPIS_LAZULI_AXE, OSMIUM_AXE, REFINED_GLOWSTONE_AXE, REFINED_OBSIDIAN_AXE),
+        PICKAXE(BRONZE_PICKAXE, STEEL_PICKAXE, LAPIS_LAZULI_PICKAXE, OSMIUM_PICKAXE, REFINED_GLOWSTONE_AXE, REFINED_OBSIDIAN_PICKAXE),
+        SWORD(BRONZE_SWORD, STEEL_SWORD, LAPIS_LAZULI_SWORD, OSMIUM_SWORD, REFINED_GLOWSTONE_SWORD, REFINED_OBSIDIAN_SWORD),
+        SHOVEL(BRONZE_SHOVEL, STEEL_SHOVEL, LAPIS_LAZULI_SHOVEL, OSMIUM_SHOVEL, REFINED_GLOWSTONE_SHOVEL, REFINED_OBSIDIAN_SHOVEL),
+
+        //ARMOR
+        HELMET(BRONZE_HELMET, STEEL_HELMET, LAPIS_LAZULI_HELMET, OSMIUM_HELMET, REFINED_GLOWSTONE_HELMET, REFINED_OBSIDIAN_HELMET),
+        CHESTPLATE(BRONZE_CHESTPLATE, OSMIUM_CHESTPLATE, STEEL_CHESTPLATE, LAPIS_LAZULI_CHESTPLATE, REFINED_GLOWSTONE_CHESTPLATE, REFINED_OBSIDIAN_CHESTPLATE),
+        LEGGINGS(BRONZE_LEGGINGS, LAPIS_LAZULI_LEGGINGS, OSMIUM_LEGGINGS, STEEL_LEGGINGS, REFINED_GLOWSTONE_LEGGINGS, REFINED_OBSIDIAN_LEGGINGS),
+        BOOTS(BRONZE_BOOTS, LAPIS_LAZULI_BOOTS, OSMIUM_BOOTS, REFINED_GLOWSTONE_BOOTS, STEEL_BOOTS, REFINED_OBSIDIAN_BOOTS);
+
+        private List<IItemProvider> toolList;
+
+        MekanismToolType(IItemProvider... tools) {
+            for (IItemProvider tool : tools) {
+                toolList = ImmutableList.of(tool);
+            }
+        }
+
+        protected List<IItemProvider> getTool() {
+            return toolList;
+        }
+    }
+
+    private enum CraftMode {
+        CRAFT,
+        METALLURGIC_INFUSING,
     }
 }

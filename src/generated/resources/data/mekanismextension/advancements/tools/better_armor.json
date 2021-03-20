@@ -1,0 +1,69 @@
+{
+  "parent": "mekanismextension:tools/better_tools",
+  "display": {
+    "icon": {
+      "item": "mekanismtools:refined_obsidian_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.plus.quite_better_armor.title"
+    },
+    "description": {
+      "translate": "advancement.plus.quite_better_armor.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "refined_obsidian_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismtools:refined_obsidian_helmet"
+          }
+        ]
+      }
+    },
+    "refined_obsidian_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismtools:refined_obsidian_chestplate"
+          }
+        ]
+      }
+    },
+    "refined_obsidian_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismtools:refined_obsidian_leggings"
+          }
+        ]
+      }
+    },
+    "refined_obsidian_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanismtools:refined_obsidian_boots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "refined_obsidian_helmet",
+      "refined_obsidian_chestplate",
+      "refined_obsidian_leggings",
+      "refined_obsidian_boots"
+    ]
+  ]
+}

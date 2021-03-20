@@ -13,6 +13,9 @@
   "advancement.plus.reinforced_alloy.desc": "Craft Reinforced Alloy in Metallurgic Infuser",
   "advancement.plus.chamber_of_richness.title": "Chamber Of Richness",
   "advancement.plus.chamber_of_richness.desc": "Craft Enrichment Chamber for basic ore multiplying processor and making Metallurgic Infuser fuels",
+  "advancement.plus.hot_electric.title": "Hot Electric",
+  "advancement.plus.packed_osmium.title": "Packed Osmium",
+  "advancement.plus.packed_osmium.desc": "Craft Osmium Compressor",
 
   "advancement.plus.basic_cc.title": "Basic Control Circuit",
   "advancement.plus.basic_cc.desc": "Craft Basic Control Circuit in Metallurgic Infuser",
@@ -23,27 +26,31 @@
   "advancement.plus.ultimate_cc.title": "Ultimate Control Circuit",
   "advancement.plus.ultimate_cc.desc": "Craft Ultimate Control Circuit",
 
-  "advancement.plus.enriched_carbon.title": "Enriched Carbon",
-  "advancement.plus.enriched_carbon.desc": "Craft Enriched Carbon in Enrichment Chamber",
-  "advancement.plus.enriched_diamond.title": "Enriched Diamond",
-  "advancement.plus.enriched_redstone.title": "Enriched Redstone",
-  "advancement.plus.enriched_diamond.desc": "Craft Enriched Diamond in Enrichment Chamber",
-  "advancement.plus.enriched_redstone.desc": "Craft Enriched Redstone in Enrichment Chamber",
+  "advancement.plus.kinda_better_generator.title": "Kinda Better Generator",
+  "advancement.plus.kinda_better_generator.desc": "Craft Solar Generator",
+  "advancement.plus.better_solar_gen.desc": "Craft Advanced Solar Generator",
+  "advancement.plus.better_solar_gen.title": "Better Solar Generator",
+  "advancement.plus.windy_gen.title": " Win-D Generator",
+  "advancement.plus.windy_gen.desc": "Craft Wind Generator, the higher you put it on, the much power it can generates",
 
   "advancement.plus.crushing_matter.title": "Crushing Matter",
   "advancement.plus.crushing_matter.desc": "Craft Crusher",
 
-  "advancement.plus.processing.enriching.dust_iron.title": "Iron Dust",
-  "advancement.plus.processing.enriching.dust_gold.title": "Gold Dust",
-  "advancement.plus.processing.enriching.crushing_metal.desc": "Double the ore in Enrichment Chamber or crush from ingot in Crusher",
-
-  "advancement.plus.steel_dust.title": "Steel Dust",
-  "advancement.plus.steel_dust.desc": "Make Steel Dust in Metallurgic Infuser from Enriched Iron. See JEI for more information",
-  "advancement.plus.steel_ingot.title": "Sharp Metal !!",
-  "advancement.plus.steel_ingot.desc": "Make Steel Ingot",
-  "advancement.plus.steel_casing.title": "Soul Of Mekanism",
-  "advancement.plus.steel_casing.desc": "Human have soul, Mekanism have Steel Casing!",
+  "advancement.plus.sharp_metal.title": "Sharp Metal !!",
+  "advancement.plus.sharp_metal.desc": "Make Steel Ingot",
+  "advancement.plus.soul_of_mekanism.title": "Soul Of Mekanism",
+  "advancement.plus.soul_of_mekanism.desc": "Human have soul, Mekanism have Steel Casing!",
+  "advancement.plus.unfriendly_generator.title": "Nature Unfriendly Generator",
+  "advancement.plus.unfriendly_generator.desc": "Craft Bio-Generator",
 
   "advancement.plus.copping.title": "Copping",
-  "advancement.plus.copping.desc": "Obtain Copper"
+  "advancement.plus.copping.desc": "Obtain Copper",
+  "advancement.plus.harden_ingot.title": "Harden Ingot",
+  "advancement.plus.harden_ingot.desc": "Craft reinforced Obsidian Ingot in Osmium Compressor",
+
+  "advancement.plus.tiny_monster.title": "Tiny Monster",
+  "advancement.plus.tiny_monster.desc": "Kill a baby mod from Mekanism Addition",
+  "advancement.plus.atomic_alloy.title": "Ultimate Alloy",
+  "advancement.plus.atomic_alloy.desc": "Craft Atomic Alloy in  Metallurgic Infuser"
+
 }

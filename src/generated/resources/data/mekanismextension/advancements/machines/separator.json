@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:machines/osmium_compressor",
+  "display": {
+    "icon": {
+      "item": "mekanism:electrolytic_separator"
+    },
+    "title": {
+      "translate": "advancement.plus.chemical_separator.title"
+    },
+    "description": {
+      "translate": "advancement.plus.chemical_separator.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_separator": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:electrolytic_separator"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_separator"
+    ]
+  ]
+}

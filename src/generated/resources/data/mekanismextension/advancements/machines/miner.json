@@ -1,0 +1,35 @@
+{
+  "parent": "mekanismextension:machines/separator",
+  "display": {
+    "icon": {
+      "item": "mekanism:digital_miner"
+    },
+    "title": {
+      "translate": "advancement.plus.mining_fever.title"
+    },
+    "description": {
+      "translate": "advancement.plus.mining_fever.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_miner": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mekanism:digital_miner"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_miner"
+    ]
+  ]
+}
